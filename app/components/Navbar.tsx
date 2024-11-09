@@ -3,15 +3,16 @@ import React from 'react'
 import Link from 'next/link'
 import { signIn,useSession,signOut } from 'next-auth/react'
 import Button from '@/app/components/Button'
+import ProfileImage from '@/app/components/ProfileImage'
 
-const Navbar = () => {
-  
+const Navbar = () => {  
     const { data : session } = useSession();
   
     return (
+    <>
     <nav>
         <div className='flex justify-between p-4 w-full bg-slate-500 rounded-tr-lg rounded-tl-lg'>
-            <section>
+        <section>
             <img src="/logo.png" alt="App Logo" />
         </section>
         
@@ -33,14 +34,15 @@ const Navbar = () => {
                     <div className='flex w-40 items-center flex-col-reverse'>
                         <span>{session?.user?.name}</span>
                     <div className='h-14 w-14 bg-blue-300 rounded-full'>
-                        <img src={session?.user?.image} alt="" className='h-14 w-14 bg-blue-300 rounded-full'/>
+                        <ProfileImage path={session?.user?.image ?? ""} height={144} weight={144} />
                     </div>
                     </div>
                 </Link>
             </div>
         </section>
-        </div>
+    </div>
     </nav>
+    </>
   )
 }
 
