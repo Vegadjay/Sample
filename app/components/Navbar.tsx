@@ -1,34 +1,47 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { signIn, signOut, useSession } from "next-auth/react";
+'use client'
+import React from 'react'
+import Link from 'next/link'
+import { signIn,useSession,signOut } from 'next-auth/react'
+import Button from '@/app/components/Button'
 
-export default function Navbar() {
+const Navbar = () => {
+  
+    const { data : session } = useSession();
+  
+    return (
+    <nav>
+        <div className='flex justify-between p-4 w-full bg-slate-500 rounded-tr-lg rounded-tl-lg'>
+            <section>
+            <img src="/logo.png" alt="App Logo" />
+        </section>
+        
+        
+        <section>
+            <div className='flex w-96 justify-between items-center'>
+                <Link href='/'>
+                    <span className='font-semibold text-xl'>Create</span>
+                </Link>
 
-  const { data: session} = useSession();
+                <Link href={'/'}>
+                    <span className='font-semibold text-xl text-red-500'>
+                        { session?.user  && <Button onclick={signOut}>Sign Out</Button>}
+                        { !session?.user  && <Button onclick={signIn}>Sign In</Button>}
+                    </span>
+                </Link>
 
-  return (
-    <nav className="h-16 p-3 w-full bg-slate-200 flex justify-between rounded-tr-lg rounded-tl-lg">
-      <div>
-        <Link href="/">
-          <Image src="/logo/logo.svg" height={144} width={144} alt="This Is Logo" />
-        </Link>
-      </div>
-      <div>
-        <div className="flex justify-around w-96">
-          <button className="text-black h-10 w-14 font-semibold">Create</button>
-          <div className="text-red-500 h-10 w-14 font-semibold flex items-center gap-2">
-            {session?.user ? (
-              <button onClick={() => signOut()}>Log Out</button>
-            ) : (
-              <button onClick={() => signIn("github")}>Login</button>
-            )} 
-          </div>
-          <div className="bg-blue-500 h-10 w-10 border border-black rounded-full">
-            <Image src="/" alt="User avatar" height={40} width={40} />
-          </div>
+                <Link href={'/'}>
+                    <div className='flex w-40 items-center flex-col-reverse'>
+                        <span>{session?.user?.name}</span>
+                    <div className='h-14 w-14 bg-blue-300 rounded-full'>
+                        <img src={session?.user?.image} alt="" className='h-14 w-14 bg-blue-300 rounded-full'/>
+                    </div>
+                    </div>
+                </Link>
+            </div>
+        </section>
         </div>
-      </div>
     </nav>
-  );
+  )
 }
+
+export default Navbar
