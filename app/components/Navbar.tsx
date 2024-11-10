@@ -11,7 +11,7 @@ const Navbar = () => {
     return (
     <>
     <nav>
-        <div className='flex justify-between p-4 w-full bg-slate-500 rounded-tr-lg rounded-tl-lg'>
+        <div className='flex justify-between p-4 w-full rounded-tr-lg rounded-tl-lg'>
         <section>
             <img src="/logo.png" alt="App Logo" />
         </section>
@@ -34,7 +34,7 @@ const Navbar = () => {
                     <div className='flex w-40 items-center flex-col-reverse'>
                         <span>{session?.user?.name}</span>
                     <div className='h-14 w-14 bg-blue-300 rounded-full'>
-                        <ProfileImage path={session?.user?.image ?? ""} height={144} weight={144} />
+                        <ProfileImage path={session?.user?.image ?? null} height={144} width={144} />
                     </div>
                     </div>
                 </Link>

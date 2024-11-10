@@ -1,23 +1,25 @@
+'use client'
 import React from 'react'
 import SearchReset from '@/app/components/SearchReset'
-
-const SearchForm = () => {
-    const query = ""
-
-
+import Form from 'next/form'
+const SearchForm = ( { query }: { query?:string } ) => {
     return (
-    <form action="/" className='search-form'>
+    <Form action="/" scroll={false} className='search-form'>
         <input type="text"
-        name='query'
-        defaultValue={""}
-        className='search-input'
-        placeholder='Search Startup'
+            name='query'
+            defaultValue={query}
+            className='search-input'
+            placeholder='Search Startup'
         />
 
         <div className='flex gap-2'>
             { query && <SearchReset /> }
         </div>
-    </form>
+
+        <button className='text-white search-btn'>
+            S
+        </button>
+    </Form>
   )
 }
 
