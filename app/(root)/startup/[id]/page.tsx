@@ -1,4 +1,4 @@
-import { formateDate } from '@/lib/utils';
+import { formatDate } from '@/lib/utils';
 import { client } from '@/sanity/lib/client';
 import { STARTUP_ID_QUERY } from '@/sanity/lib/queries';
 import Link from 'next/link';
@@ -24,7 +24,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
     return (
         <div>
             <section className='pink_container !min-h-[230px]'>
-                <p className='tag'>{formateDate(post._createdAt)}</p>
+                <p className='tag'>{formatDate(post._createdAt)}</p>
                 <h1 className='heading'>{post.title}</h1>
                 <p className='sub-heading !max-w-5xl'>{post.description}</p>
             </section>
