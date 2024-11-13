@@ -30,13 +30,13 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ q
         </p>
 
         <ul className="card_grid mt-7">
-          {posts && posts.length > 0 ? (
-            posts.map((post: StartupTypeCard, index: number) => (
-              <StartupCard key={post._id} post={post} />
-            ))
-          ) : (
-            <p className="no-results">No Startup Found</p>
-          )}
+            {posts && posts.length > 0 ? (
+              posts.map((post: StartupTypeCard) => (
+            <StartupCard key={post._id} post={post} />
+             ))
+            ) : (
+                <p className="no-results">No Startup Found</p>
+            )}
         </ul>
       </section>
       <SanityLive />
