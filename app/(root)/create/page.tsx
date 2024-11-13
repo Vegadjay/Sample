@@ -1,5 +1,3 @@
-'use client'
-
 import StartupForm from "@/app/components/StartupForm"
 import { useSession } from "next-auth/react"
 import { redirect } from "next/navigation";
