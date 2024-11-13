@@ -2,7 +2,7 @@
 
 A cutting-edge e-commerce solution built with Next.js, featuring a sleek Figma-inspired design, robust authentication, and modern development practices.
 
-![Homepage Screenshot](/SS_HOME.png "Homepage featuring hero section and featured products")
+![Homepage Screenshot](./public/SS_HOME.png "Homepage featuring hero section and featured products")
 
 ## Features
 
@@ -12,7 +12,7 @@ A cutting-edge e-commerce solution built with Next.js, featuring a sleek Figma-i
   - Custom animations and transitions
   - Hand-written CSS for unique components
 
-![Product Page](/SS_Startup.png "Product detail page with gallery and information")
+![Product Page](./public/SS_Startup.png "Product detail page with gallery and information")
 
 - 🔐 **Advanced Authentication**
   - Secure user authentication with NextAuth.js
@@ -26,7 +26,7 @@ A cutting-edge e-commerce solution built with Next.js, featuring a sleek Figma-i
   - Custom content types and schemas
   - Optimized media handling
 
-![Create Your Own Startup](/SS-Create.png "Create Your Own Startup")
+![Create Your Own Startup](./public/SS_Create.png "Create Your Own Startup")
 
 - 🛠️ **Technical Features**
   - Form validation using Zod
