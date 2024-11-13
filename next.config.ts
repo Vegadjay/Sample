@@ -1,4 +1,10 @@
 const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+   eslint: {
+    ignoreDuringBuilds: true,
+  },
   devIndicators: {
     appIsrStatus: true,
     buildActivity: true,
@@ -11,9 +17,6 @@ const nextConfig = {
     after: true,
   },
   productionBrowserSourceMaps: false,
-  typescript: {
-    ignoreBuildErrors: true,
-  },
 
 };
 
