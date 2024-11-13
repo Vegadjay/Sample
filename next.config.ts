@@ -1,7 +1,16 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+const nextConfig = {
+  devIndicators: {
+    appIsrStatus: true,
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+  images: {
+    domains: ['fastly.picsum.photos', 'example.com', 'anotherdomain.com', 'yetanotherdomain.com'],
+  },
+  experimental: {
+    after: true,
+  },
+  productionBrowserSourceMaps: false,
 };
 
-export default nextConfig;
+module.exports = nextConfig;

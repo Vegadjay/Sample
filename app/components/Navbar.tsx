@@ -19,7 +19,7 @@ const Navbar = () => {
         
         <section>
             <div className='flex w-96 justify-between items-center'>
-                <Link href='/'>
+                <Link href={`/create`}>
                     <span className='font-semibold text-xl'>Create</span>
                 </Link>
 
