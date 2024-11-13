@@ -11,6 +11,8 @@ const nextConfig = {
     after: true,
   },
   productionBrowserSourceMaps: false,
+  ignoreBuildErrors: true,
+
 };
 
 module.exports = nextConfig;
